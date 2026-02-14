@@ -1,0 +1,175 @@
+$date
+	Tue Feb 10 17:52:11 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_cpu $end
+$var reg 1 ! clk $end
+$var reg 1 " reset $end
+$scope module cpu $end
+$var wire 1 # branch $end
+$var wire 1 ! clk $end
+$var wire 1 " reset $end
+$var wire 1 $ zero $end
+$var wire 1 % we $end
+$var wire 1 & select_imm $end
+$var wire 3 ' rt [2:0] $end
+$var wire 3 ( rs [2:0] $end
+$var wire 3 ) rd [2:0] $end
+$var wire 1 * overflow $end
+$var wire 16 + instruction [15:0] $end
+$var wire 6 , immidiate [5:0] $end
+$var wire 1 - carry $end
+$var wire 3 . alu_op [2:0] $end
+$var wire 8 / PC [7:0] $end
+$scope module PC_instr $end
+$var wire 1 # branch $end
+$var wire 1 0 branch_should_happen $end
+$var wire 1 ! clk $end
+$var wire 1 " reset $end
+$var wire 1 $ zero $end
+$var wire 6 1 immidiate [5:0] $end
+$var wire 8 2 PC_next [7:0] $end
+$var wire 8 3 PC_branch_address [7:0] $end
+$var reg 8 4 PC [7:0] $end
+$var reg 8 5 branch_offset [7:0] $end
+$upscope $end
+$scope module cu $end
+$var wire 3 6 rt [2:0] $end
+$var wire 3 7 rs [2:0] $end
+$var wire 3 8 rd [2:0] $end
+$var wire 4 9 opcode [3:0] $end
+$var wire 16 : instruction [15:0] $end
+$var wire 6 ; immidiate [5:0] $end
+$var reg 3 < alu_op [2:0] $end
+$var reg 1 = branch $end
+$var reg 1 % reg_write $end
+$var reg 1 & select_imm $end
+$upscope $end
+$scope module dp $end
+$var wire 3 > alu_op [2:0] $end
+$var wire 1 - carry $end
+$var wire 1 ! clk $end
+$var wire 6 ? immidiate [5:0] $end
+$var wire 1 * overflow $end
+$var wire 3 @ rd [2:0] $end
+$var wire 1 % reg_write $end
+$var wire 3 A rs [2:0] $end
+$var wire 3 B rt [2:0] $end
+$var wire 1 & select_imm $end
+$var wire 1 $ zero $end
+$var wire 8 C z [7:0] $end
+$var wire 8 D x [7:0] $end
+$var wire 8 E w [7:0] $end
+$var wire 1 F alu_zero $end
+$var wire 1 G alu_overflow $end
+$var wire 1 H alu_carry $end
+$var reg 8 I immidiate_8 [7:0] $end
+$var reg 8 J y [7:0] $end
+$scope module al $end
+$var wire 8 K B [7:0] $end
+$var wire 3 L alu_op [2:0] $end
+$var wire 1 F zero $end
+$var wire 1 G overflow $end
+$var wire 1 H carry $end
+$var wire 8 M A [7:0] $end
+$var reg 8 N out_put [7:0] $end
+$var reg 9 O temp_out [8:0] $end
+$upscope $end
+$scope module rf $end
+$var wire 1 ! clk $end
+$var wire 3 P rd [2:0] $end
+$var wire 8 Q rd1 [7:0] $end
+$var wire 8 R rd2 [7:0] $end
+$var wire 3 S rs [2:0] $end
+$var wire 3 T rt [2:0] $end
+$var wire 8 U wd [7:0] $end
+$var wire 1 % we $end
+$var integer 32 V i [31:0] $end
+$upscope $end
+$upscope $end
+$scope module instruction_memmory $end
+$var wire 8 W address [7:0] $end
+$var wire 16 X instruction [15:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+bx X
+bx W
+b1000 V
+bx U
+bx T
+bx S
+bx R
+bx Q
+bx P
+bx O
+bx N
+bx M
+bx L
+bx K
+bx J
+bx I
+xH
+xG
+xF
+bx E
+bx D
+bx C
+bx B
+bx A
+bx @
+bx ?
+bx >
+x=
+bx <
+bx ;
+bx :
+bx 9
+bx 8
+bx 7
+bx 6
+bx 5
+bx 4
+bx 3
+bx 2
+bx 1
+x0
+bx /
+bx .
+x-
+bx ,
+bx +
+x*
+bx )
+bx (
+bx '
+x&
+x%
+x$
+z#
+x"
+0!
+$end
+#10000
+1!
+#20000
+0!
+#30000
+1!
+#40000
+0!
+#50000
+1!
+#60000
+0!
