@@ -23,37 +23,20 @@ end
 // Test sequence
 initial begin
 $dumpfile("tb_cpu3.vcd"); // Output filename
-// Dump all signals with depth of 10 levels
-$dumpvars(10, tb_cpu3);
+// Dump all signals recursively from top module
+$dumpvars(0, tb_cpu3);
 
 $display("\n=== CPU Simulation Started ===");
-$display("Time | PC | Instr  | OpCode | rd | rs | rt | Imm | WE | ALUop | R1 | R2 | R3");
-$display("-----|-----|--------|--------|-----|-----|-----|-----|-----|-------|-----|-----|-----");
+$display("Dumping all signals to tb_cpu3.vcd\n");
 
 reset = 1;
 #40;
 reset = 0;
 
-// Monitor signals for 10 cycles
-repeat(10) begin
-#20;
-$display("%4t | %3d | %4h | %4b | %2d | %2d | %2d | %3d | %1b |  %3b  | %3d | %3d | %3d",
-    $time,
-    cpu.PC,
-    cpu.instruction,
-    cpu.cu.opcode,
-    cpu.cu.rd,
-    cpu.cu.rs,
-    cpu.cu.rt,
-    cpu.cu.immidiate,
-    cpu.cu.reg_write,
-    cpu.cu.alu_op,
-    cpu.dp.rf.registers[1],
-    cpu.dp.rf.registers[2],
-    cpu.dp.rf.registers[3]);
-end
+// Run for enough time to see all instructions
+#200;
 
-$display("\n=== Simulation Complete ===");
+$display("=== Simulation Complete ===");
 $display("View waveforms with: gtkwave tb_cpu3.vcd\n");
 $finish;
 end

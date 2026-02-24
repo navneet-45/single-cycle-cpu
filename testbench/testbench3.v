@@ -26,7 +26,7 @@ module tb_cpu1;
     initial begin
         reset = 1;
         #20 reset = 0;
-        #200 $finish;
+        #200 $finish;// Ends simulation after 200ns
     end
 
     initial begin

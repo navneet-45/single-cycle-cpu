@@ -32,7 +32,7 @@ module ALU(
         3'b011: out_put = A | B;
         3'b100: out_put = A ^ B;
         //MOV
-        3'b101: out_put = B;
+        3'b101: out_put = B;//
         3'b110: out_put = 8'b0;
         3'b111: out_put = 8'b0;
         default : out_put = 8'b0;
