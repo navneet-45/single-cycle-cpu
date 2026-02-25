@@ -4,27 +4,26 @@ module control_unit(
     output [2:0] rs,
     output [2:0] rt,
     output [5:0] immidiate,
-    output reg_write,
-    output [2:0] alu_op,
-    output branch,
-    output select_imm
+    output reg reg_write,
+    output reg [2:0] alu_op,
+    output reg branch,
+    output reg select_imm
     );
 
     wire [3:0] opcode;
     assign opcode = instruction[15:12];
     assign rd = instruction[11:9];
     assign rs = instruction[8:6];
-    assign rt = instructon[5:3];
+    assign rt = instruction[5:3];
     assign immidiate = instruction[5:0];
 
-    always (*) begin
+    always @(*) begin
         alu_op = 3'b0;
         reg_write = 1'b0;
         select_imm = 1'b0;
         branch = 1'b0;
-    end
-
-    case(opcode)
+        
+        case(opcode)
     // R type instruction
     4'b0000 : begin// addition
         alu_op = 3'b000;
@@ -124,5 +123,6 @@ module control_unit(
         reg_write = 1'b0;
         branch = 1'b1;
     end
-    endcase
+        endcase
+    end
 endmodule
