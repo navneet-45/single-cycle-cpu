@@ -174,7 +174,11 @@ Once individual components worked, I integrated them into the complete CPU and v
 - Registers updated as expected
 - Branches worked properly
 - Multiple instruction sequences ran successfully
----
+
+![Instrctions](IMAGES/image.png)
+----->SIMULATION RESULTS
+![Results](IMAGES/image-1.png)
+![Waveforms](IMAGES/image-2.png)
 
 ## Verification Results
 
@@ -264,38 +268,6 @@ Opening the `.vcd` file in GTKWave shows:
 │
 └── README.md                 # This file
 ```
-
----
-
-## Test Results
-
-### Test 1: Basic Arithmetic Operations (testbench5)
-
-**Program:**
-```assembly
-LI R1, 30      // Load immediate: R1 = 30
-LI R2, 20      // Load immediate: R2 = 20
-ADD R3, R1, R2 // R3 = R1 + R2 = 50
-SUB R4, R1, R2 // R4 = R1 - R2 = 10
-```
-
-**Expected Results:**
-| Register | Expected Value |
-|----------|----------------|
-| R1 | 30 |
-| R2 | 20 |
-| R3 | 50 |
-| R4 | 10 |
-
-**Run Test:**
-```bash
-cd testbench
-iverilog -o tb5 testbench5.v ../src/*.v
-vvp tb5
-gtkwave tb_cpu2.vcd
-```
-
-**Status:** ✓ Passed
 
 ---
 
